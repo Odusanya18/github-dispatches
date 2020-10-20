@@ -1,0 +1,62 @@
+{
+  "name": "github-dispatches-deck",
+  "version": "1.0.0",
+  "description": "A Demo Spinnaker Plugin to trigger github dispatches",
+  "main": "build/dist/index.c.js",
+  "module": "build/dist/index.js",
+  "files": [
+    "build/dist"
+  ],
+  "types": "build/dist/index.d.ts",
+  "scripts": {
+    "clean": "npx shx rm -rf build",
+    "build": "npm run clean && rollup -c",
+    "watch": "rollup -c -w --no-watch.clearScreen",
+    "postinstall": "check-peer-dependencies || true",
+    "develop": "npm run clean && run-p watch proxy",
+    "proxy": "dev-proxy",
+    "lint": "prettier --check './src/**/*.{tsx,ts}'",
+    "lint:fix": "prettier --write './src/**/*.{tsx,ts}'"
+  },
+  "repository": "https://github.com/odusanya18/github-dispatches.git",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "15.0.0",
+    "@rollup/plugin-node-resolve": "9.0.0",
+    "@rollup/plugin-typescript": "6.0.0",
+    "@spinnaker/eslint-plugin": "1.0.7",
+    "@types/angular": "1.6.10",
+    "@types/lodash-es": "^4.17.3",
+    "@types/react": "16.8.25",
+    "@types/react-select": "1.2.1",
+    "@typescript-eslint/eslint-plugin": "2.26.0",
+    "@typescript-eslint/parser": "2.26.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-react-hooks": "3.0.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.0.2",
+    "rollup": "2.27.1",
+    "rollup-plugin-external-globals": "0.6.0",
+    "rollup-plugin-less": "1.1.2",
+    "rollup-plugin-postcss": "3.1.8",
+    "shx": "0.3.2",
+    "typescript": "4.0.2"
+  },
+  "dependencies": {
+    "@spinnaker/core": "0.0.507",
+    "@spinnaker/pluginsdk": "0.0.21",
+    "@uirouter/core": "6.0.4",
+    "@uirouter/react": "1.0.2",
+    "bufferutil": "4.0.1",
+    "husky": "4.2.5",
+    "lodash-es": "4.17.15",
+    "pretty-quick": "2.0.1",
+    "prop-types": "15.6.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "rxjs": "5.4.2",
+    "utf-8-validate": "5.0.2"
+  }
+}

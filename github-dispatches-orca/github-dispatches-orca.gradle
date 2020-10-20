@@ -1,0 +1,16 @@
+apply from: "$rootDir/gradle/kotlin.gradle"
+apply from: "$rootDir/gradle/spinnaker.gradle"
+
+spinnakerPlugin {
+    serviceName = "orca"
+    pluginClass = "com.spinnakersummit.orca.GithubDispatchPlugin"
+    requires="orca>=0.0.0"
+}
+
+dependencies {
+    compileOnly(group: 'org.pf4j', name: 'pf4j', version: pf4jVersion)
+    kapt(group: 'org.pf4j', name: 'pf4j', version: pf4jVersion)
+
+    compileOnly (group: 'com.netflix.spinnaker.orca', name: 'orca-api', version: orcaVersion)
+    compileOnly (group: 'com.netflix.spinnaker.kork', name: 'kork-plugins-api', version: korkVersion)
+}
